@@ -1,0 +1,51 @@
+.folder{
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    vertical-align: middle;
+}
+body {
+    background-color: snow;
+}
+input[type="button" i] {
+    background-color: #ddd;
+    border:black solid;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    text-transform: none;
+    cursor: pointer;
+ }
+input[type="button" i]:hover {
+background-color:  rgb(235, 224, 224);
+font-weight: bold;
+text-transform: uppercase;
+}
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 10%;
+    position: relative;
+}
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    align-items: center;
+    text-align: center;
+}
+table tr:nth-child(even){
+    background-color: rgb(235, 231, 231);
+    align-items: center;
+}
+table tr:hover{
+    background-color: #ddd;
+}
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color:rgb(145, 143, 143);
+    color: white;
+}
