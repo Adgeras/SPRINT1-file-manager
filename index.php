@@ -53,7 +53,19 @@ if(!$_SESSION['logged_in'] == true){
     print('<button class = "btn btn-lg btn-primary btn-block" type = "submit" name = "login">Login</button>');
     print('</form></div>');
     die();
+}
 
+
+/************** DIRECTORY CREATION ************************ */  
+
+if(isset($_GET["make_fold"])){
+    if($_GET["make_fold"] != ""){
+        $folder_create = './' . $_GET["path"] . $_GET["make_fold"];
+        if (!is_dir($folder_create)) mkdir($folder_create, 0777, true);
+    }
+    echo'<script>window.location.reload()</script>';
+    $url = preg_replace("/(&?|\??)make_fold=(.+)?/", "", $_SERVER["REQUEST_URI"]);
+    header('Location: ' . urldecode($url));
 }
 
 
@@ -93,8 +105,17 @@ function readFolderFiles($path) {
     $out .= '</table>';
     return $out;
 }
-
 ?>
+<!-- /* ******************** DIRECTORY CREATION FORM ***************/ -->
+
+<div class = "create">
+    <form action="" method="get">
+        <input type="hidden" name="path" value="<?php print($_GET['path']) ?>" /> 
+        <input placeholder="Name of new directory" type="text" id="make_fold" name="make_fold">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
 <div class="logout">
  <a href = "index.php?action=logout"> Logout </a>
 </div>  

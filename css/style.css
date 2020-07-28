@@ -11,7 +11,7 @@ input[type="button" i] {
     margin-left: 15%;
     margin-top: 1%;
     width: 69px;
-    height: 32px;
+    height: 30px;
     background-color: #ddd;
     border:black solid;
     border-radius: 5px;
@@ -20,10 +20,12 @@ input[type="button" i] {
     text-transform: none;
     cursor: pointer;
  }
-input[type="button" i]:hover {
+input[type="button" i]:hover,
+.create > form > button:hover {
 background-color:  rgb(235, 224, 224);
 font-weight: bold;
 text-transform: uppercase;
+width: fit-content;
 }
 table {
     border-collapse: collapse;
@@ -76,7 +78,7 @@ text-transform: uppercase;
 width: fit-content;
 }
 .form{
-    width: 300px;
+    width: fit-content;
     margin-left: calc(50% - 150px);
     margin-top: 20%;
     height: fit-content;
@@ -87,4 +89,39 @@ width: fit-content;
 .btn {
     width: 70%;
     margin: 10px 0 10px 0;
+}
+.create {
+    display: inline-block;
+    float: left;
+    margin-left: 15%;
+    margin-top: 1%;
+    background-color: #ddd;
+    border:black solid;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    text-transform: none;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: fit-content;
+    min-height: fit-content;
+    vertical-align: middle;
+}
+.create > form > button {
+    display: inline-block;
+    float: right;
+    margin-left: 9px;
+    width: 69px;
+    height: 29px;
+    background-color: #ddd;
+    border:black solid;
+    border-radius: 5px;
+    color: white;
+    padding: 0px 10px;
+    text-transform: none;
+    cursor: pointer;
+}
+#make_fold{
+    vertical-align: middle;
+    margin-top: 4px;
 }
