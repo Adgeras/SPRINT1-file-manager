@@ -1,14 +1,61 @@
+<div>
+ <?php
+      
+//********** Logic to login ************************
+
+session_start();
+ $msg = 'Wrong username or password';
+ if (isset($_POST['login']) 
+     && !empty($_POST['username']) 
+     && !empty($_POST['password'])
+ ) {	
+    if ($_POST['username'] == 'Edgaras' && 
+       $_POST['password'] == 'password'
+     ) {
+       $_SESSION['logged_in'] = true;
+       $_SESSION['timeout'] = time();
+       $_SESSION['username'] = 'Edgaras';
+    } else {
+       $msg;
+    }
+ }
+// **************  Logout logic ***********************
+
+     if(isset($_GET['action']) and $_GET['action'] == 'logout'){
+        session_start();
+        unset($_SESSION['username']);
+        unset($_SESSION['password']);
+        unset($_SESSION['logged_in']);
+        print('Logged out!');
+    }
+ ?>
+</div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/sprintfilebrowser/css/reset.css">
-    <link rel="stylesheet" href="/sprintfilebrowser/css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>File browser</title>
 </head>
 <body>
 <?php
+
+if(!$_SESSION['logged_in'] == true){
+
+    // Login form
+
+    print('<div class = "form"><span> Please enter username and password</span><form action = "index.php?path=" method = "post">');
+    print('<h4>' . $msg . '</h4>');
+    print('<input type = "text" class = "username" name = "username"  required autofocus></br>');
+    print('<input type = "password" class = "password" name = "password" required>');
+    print('<button class = "btn btn-lg btn-primary btn-block" type = "submit" name = "login">Login</button>');
+    print('</form></div>');
+    die();
+
+}
+
 
 $path = '.';
 if (isset($_GET['a'])){
@@ -48,6 +95,8 @@ function readFolderFiles($path) {
 }
 
 ?>
-    
+<div class="logout">
+ <a href = "index.php?action=logout"> Logout </a>
+</div>  
 </body>
 </html>

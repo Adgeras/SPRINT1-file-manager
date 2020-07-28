@@ -8,6 +8,9 @@ body {
     background-color: snow;
 }
 input[type="button" i] {
+    margin-left: 15%;
+    margin-top: 1%;
+    width: 69px;
     background-color: #ddd;
     border:black solid;
     border-radius: 5px;
@@ -25,7 +28,7 @@ table {
     border-collapse: collapse;
     width: 70%;
     margin-left: 15%;
-    margin-top: 10%;
+    margin-top: 1%;
     position: relative;
 }
 
@@ -48,4 +51,26 @@ table th {
     text-align: center;
     background-color:rgb(145, 143, 143);
     color: white;
+}
+.logout a{
+    display: inline-block;
+    float: right;
+    margin-right: 15%;
+    margin-top: 1%;
+    /* position: absolute; */
+    background-color: #ddd;
+    border:black solid;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    text-transform: none;
+    text-decoration: none;
+    cursor: pointer;
+    width: fit-content;
+}
+.logout a:hover{
+background-color:  rgb(235, 224, 224);
+font-weight: bold;
+text-transform: uppercase;
+width: fit-content;
 }
