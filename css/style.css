@@ -11,6 +11,7 @@ input[type="button" i] {
     margin-left: 15%;
     margin-top: 1%;
     width: 69px;
+    height: 32px;
     background-color: #ddd;
     border:black solid;
     border-radius: 5px;
@@ -73,4 +74,17 @@ background-color:  rgb(235, 224, 224);
 font-weight: bold;
 text-transform: uppercase;
 width: fit-content;
+}
+.form{
+    width: 300px;
+    margin-left: calc(50% - 150px);
+    margin-top: 20%;
+    height: fit-content;
+    background-color:  #ddd;
+    text-align: center;
+}
+
+.btn {
+    width: 70%;
+    margin: 10px 0 10px 0;
 }
