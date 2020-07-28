@@ -1,7 +1,8 @@
 For learning purpose only - My first PHP project.
-Simple file/directorys manager witch back button.
+Simple file/directorys manager witch back button, authentication and directory creation.
 
 Authentication:
+
 name: Edgaras
 password: password
 
