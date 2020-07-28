@@ -25,7 +25,7 @@ input[type="button" i]:hover,
 background-color:  rgb(235, 224, 224);
 font-weight: bold;
 text-transform: uppercase;
-width: fit-content;
+width: 79px;
 }
 table {
     border-collapse: collapse;
