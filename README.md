@@ -4,6 +4,7 @@ Simple file/directorys manager witch back button, authentication and directory c
 Authentication:
 
 name: Edgaras
+
 password: password
 
 # SPRINT1-file-manager
