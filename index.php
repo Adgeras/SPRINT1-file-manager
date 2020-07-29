@@ -60,8 +60,10 @@ if(!$_SESSION['logged_in'] == true){
 
 if(isset($_GET["make_fold"])){
     if($_GET["make_fold"] != ""){
-        $folder_create = './' . $_GET["path"] . $_GET["make_fold"];
+        $folder_create = './' . $_GET["path"] . '/' . $_GET["make_fold"];
         if (!is_dir($folder_create)) mkdir($folder_create, 0777, true);
+        // print($folder_create);
+        // die();
     }
     echo'<script>window.location.reload()</script>';
     $url = preg_replace("/(&?|\??)make_fold=(.+)?/", "", $_SERVER["REQUEST_URI"]);
@@ -70,8 +72,8 @@ if(isset($_GET["make_fold"])){
 
 
 $path = '.';
-if (isset($_GET['a'])){
-    $path = $_GET['a'];
+if (isset($_GET['path'])){
+    $path = $_GET['path'];
     echo'<input type="button" value="Back" onclick="window.history.back()">';
 }
 
@@ -88,7 +90,7 @@ function readFolderFiles($path) {
             if (is_dir($path.'/'.$name)) {
                 
                 $folder = $name;
-                $link = str_replace('./','', '?a='.$path.'/'.$folder);
+                $link = str_replace('./','', '?path='.$path.'/'.$folder);
                 //'?a=./css
                 //'?a=css/pavyzdys          
                 $out .= '<tr>';
